@@ -1,0 +1,13 @@
+{
+  "schedule": "0 0 * * * *",
+  "evms": [
+    {
+      "chainName": "ethereum-mainnet",
+      "mailboxAddress": "0x14fa87C3B5F1b95444D1b4Ed9A8fC8516D5d23bF",
+      "gsms": [
+        { "address": "0x3A3868898305f04beC7FEa77BecFf04C13444112" },
+        { "address": "0x882285E62656b9623AF136Ce3078c6BdCc33F5E3" }
+      ]
+    }
+  ]
+}
