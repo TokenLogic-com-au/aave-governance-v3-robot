@@ -1,0 +1,24 @@
+{
+  "schedule": "0 0 12 */14 * *",
+  "chainName": "ethereum-mainnet-optimism-1",
+  "_rolesModifier": "0x4b33Fd24ab9f9AA1dFFEa634E3Af64143C082436",
+  "_roleKey": "0x616176655f6465706f7369746f72000000000000000000000000000000000000",
+  "executor": "0x0000000000000000000000000000000000000000",
+  "steward": "0x4684b645386525057526EB85854045914Fe389d6",
+  "dataProviderV3": "0x14496b405D62c24F91f04Cda1c69Dc526D56fDE5",
+  "collector": "0xB2289E329D2F85F1eD31Adbb30eA345278F21bcf",
+  "priceOracle": "0xD81eb3728a631871a7eBBaD631b5f424909f0c77",
+  "corePoolV3": "0x794a61358D6845594F94dc1DB02A252b5b4814aD",
+  "depositMinUsd": "100000000000",
+  "migrationMinUsd": "500000000000",
+  "migrationBps": "9000",
+  "maxBps": "10000",
+  "ignoredTokens": [
+    "0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f",
+    "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+    "0x63706e401c06ac8513145b7687A14804d17f814b",
+    "0xba5DdD1f9d7F570dc94a51479a000E3BCE967196",
+    "0x76FB31fb4af56892A25e32cFC43De717950c9278"
+  ],
+  "primeTokens": []
+}

@@ -23,10 +23,36 @@ staging-settings:
 # ==========================================================================
 production-settings:
   account:
-      workflow-owner-address: "0xa7F927EA68f2F916Bf6362CC4B11726ccAD6339B"
-      workflow-name: "deployer"
+    workflow-owner-address: "0xa7F927EA68f2F916Bf6362CC4B11726ccAD6339B"
+    workflow-name: "deployer"
   rpcs:
     - chain-name: ethereum-mainnet-base-1
       url: https://mainnet.base.org
     - chain-name: ethereum-mainnet
       url: https://mainnet.gateway.tenderly.co
+
+# ==========================================================================
+# aave-depositor — one target per chain (single-chain workflow instances)
+# ==========================================================================
+staging-ethereum-settings:
+  rpcs:
+    - chain-name: ethereum-mainnet
+      url: ${RPC_URL_ETHEREUM}
+
+# ==========================================================================
+staging-arbitrum-settings:
+  rpcs:
+    - chain-name: ethereum-mainnet-arbitrum-1
+      url: ${RPC_URL_ARBITRUM}
+
+# ==========================================================================
+staging-base-settings:
+  rpcs:
+    - chain-name: ethereum-mainnet-base-1
+      url: ${RPC_URL_BASE}
+
+# ==========================================================================
+staging-optimism-settings:
+  rpcs:
+    - chain-name: ethereum-mainnet-optimism-1
+      url: ${RPC_URL_OPTIMISM}

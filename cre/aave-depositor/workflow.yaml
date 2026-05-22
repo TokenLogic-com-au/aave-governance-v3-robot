@@ -1,0 +1,39 @@
+staging-ethereum-settings:
+  user-workflow:
+    workflow-name: "aave-depositor-staging-ethereum"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.staging.ethereum.json"
+    secrets-path: ""
+
+staging-arbitrum-settings:
+  user-workflow:
+    workflow-name: "aave-depositor-staging-arbitrum"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.staging.arbitrum.json"
+    secrets-path: ""
+
+staging-base-settings:
+  user-workflow:
+    workflow-name: "aave-depositor-staging-base"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.staging.base.json"
+    secrets-path: ""
+
+staging-optimism-settings:
+  user-workflow:
+    workflow-name: "aave-depositor-staging-optimism"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.staging.optimism.json"
+    secrets-path: ""
+
+production-settings:
+  user-workflow:
+    workflow-name: "aave-depositor-production"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.production.json"
+    secrets-path: ""
