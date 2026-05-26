@@ -5,19 +5,7 @@ import {Test} from 'forge-std/Test.sol';
 import {ReceiverTemplate} from '../src/contracts/cre-receivers/ReceiverTemplate.sol';
 import {IReceiver} from '../src/interfaces/IReceiver.sol';
 import {IERC165} from 'openzeppelin-contracts/contracts/utils/introspection/IERC165.sol';
-
-contract MockReceiver is ReceiverTemplate {
-  bytes public lastReport;
-
-  constructor(
-    address _forwarder,
-    address _initialOwner
-  ) ReceiverTemplate(_forwarder, _initialOwner) {}
-
-  function _processReport(bytes calldata report) internal override {
-    lastReport = report;
-  }
-}
+import {MockReceiver} from './mocks/MockReceiver.sol';
 
 contract ReceiverTemplateTest is Test {
   MockReceiver internal receiver;
