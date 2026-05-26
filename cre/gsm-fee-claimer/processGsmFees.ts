@@ -46,15 +46,10 @@ export const processGsmFees = (
           blockNumber: LAST_FINALIZED_BLOCK_NUMBER,
         })
         .result();
-      const data = bytesToHex(response.data);
-      if (data === '0x') {
-        runtime.log(`[${chainName}] getAccruedFees(${gsmAddress}): empty response, skipping`);
-        continue;
-      }
       const fees = decodeFunctionResult({
         abi: IGsm,
         functionName: 'getAccruedFees',
-        data,
+        data: bytesToHex(response.data),
       }) as bigint;
       runtime.log(`[${chainName}] getAccruedFees(${gsmAddress}): ${fees}`);
       if (fees === 0n) continue;
