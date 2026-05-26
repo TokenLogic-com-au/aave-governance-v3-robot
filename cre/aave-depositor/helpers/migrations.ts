@@ -161,9 +161,13 @@ export function buildMigrationCalls(
   const liquidity = batchGetV2Liquidity(runtime, evmClient, dp2, eligibleTokens);
   const caps = dataProviderV3.batchGetReserveCaps(eligibleTokens);
 
-  const capMaps = buildCapSupplyMaps(runtime, evmClient, eligibleTokens, caps, dataProviderV3);
-  if (capMaps === null) return calls;
-  const {tokenAddrsForCapped, supplyByCappedPos, eligIdxToCappedPos} = capMaps;
+  const {tokenAddrsForCapped, supplyByCappedPos, eligIdxToCappedPos} = buildCapSupplyMaps(
+    runtime,
+    evmClient,
+    eligibleTokens,
+    caps,
+    dataProviderV3
+  );
 
   for (const [eligIdx, origIdx] of eligible.entries()) {
     const token = tokenAddresses[origIdx];

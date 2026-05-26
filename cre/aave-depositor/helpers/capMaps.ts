@@ -16,7 +16,7 @@ export function buildCapSupplyMaps(
   eligibleTokens: `0x${string}`[],
   caps: (ReserveCaps | null)[],
   dataProviderV3: DataProviderV3
-): CapSupplyMaps | null {
+): CapSupplyMaps {
   const cappedIndices = caps
     .map((cap, eligIdx) => (cap !== null && cap.supplyCap > 0n ? eligIdx : null))
     .filter((eligIdx): eligIdx is number => eligIdx !== null);

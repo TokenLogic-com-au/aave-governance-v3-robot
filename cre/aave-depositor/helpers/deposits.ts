@@ -68,9 +68,13 @@ export function buildDepositCalls(
   const eligibleTokens = eligible.map((i) => tokenAddresses[i]);
   const caps = dataProviderV3.batchGetReserveCaps(eligibleTokens);
 
-  const capMaps = buildCapSupplyMaps(runtime, evmClient, eligibleTokens, caps, dataProviderV3);
-  if (capMaps === null) return calls;
-  const {tokenAddrsForCapped, supplyByCappedPos, eligIdxToCappedPos} = capMaps;
+  const {tokenAddrsForCapped, supplyByCappedPos, eligIdxToCappedPos} = buildCapSupplyMaps(
+    runtime,
+    evmClient,
+    eligibleTokens,
+    caps,
+    dataProviderV3
+  );
 
   for (const [eligIdx, origIdx] of eligible.entries()) {
     const token = tokenAddresses[origIdx];
