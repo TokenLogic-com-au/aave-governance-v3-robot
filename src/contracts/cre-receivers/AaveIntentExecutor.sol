@@ -9,9 +9,9 @@ import {IRoles} from '../../interfaces/IRoles.sol';
 /// @dev After deployment the owner must call setExpectedWorkflowId(workflowId)
 ///      to restrict acceptance to the trusted CRE workflow.
 contract AaveIntentExecutor is ReceiverTemplate {
-  address public immutable roles;
-  address public immutable steward;
-  bytes32 public immutable roleKey;
+  address public immutable ROLES;
+  address public immutable STEWARD;
+  bytes32 public immutable ROLE_KEY;
 
   error ZeroAddress();
 
@@ -23,12 +23,12 @@ contract AaveIntentExecutor is ReceiverTemplate {
     address _initialOwner
   ) ReceiverTemplate(_forwarder, _initialOwner) {
     if (_roles == address(0) || _steward == address(0)) revert ZeroAddress();
-    roles = _roles;
-    steward = _steward;
-    roleKey = _roleKey;
+    ROLES = _roles;
+    STEWARD = _steward;
+    ROLE_KEY = _roleKey;
   }
 
   function _processReport(bytes calldata report) internal override {
-    IRoles(roles).execTransactionWithRole(steward, 0, report, 0, roleKey, true);
+    IRoles(ROLES).execTransactionWithRole(STEWARD, 0, report, 0, ROLE_KEY, true);
   }
 }

@@ -49,9 +49,9 @@ contract AaveIntentExecutorTest is Test {
   }
 
   function test_constructor_SetsImmutables() public {
-    assertEq(executor.roles(), address(roles));
-    assertEq(executor.steward(), steward);
-    assertEq(executor.roleKey(), ROLE_KEY);
+    assertEq(executor.ROLES(), address(roles));
+    assertEq(executor.STEWARD(), steward);
+    assertEq(executor.ROLE_KEY(), ROLE_KEY);
     assertEq(executor.owner(), owner);
     assertEq(executor.getForwarderAddress(), forwarder);
   }
