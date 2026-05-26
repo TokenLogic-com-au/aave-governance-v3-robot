@@ -99,8 +99,14 @@ contract AaveIntentExecutorTest is Test {
   }
 
   function test_onReport_ForwardsArbitraryReportPayload(bytes calldata payload) public {
+    vm.expectCall(
+      address(roles),
+      abi.encodeCall(
+        IRoles.execTransactionWithRole,
+        (executor.STEWARD(), 0, payload, 0, executor.ROLE_KEY(), true)
+      )
+    );
     vm.prank(forwarder);
     executor.onReport('', payload);
-    assertEq(roles.lastData(), payload);
   }
 }
