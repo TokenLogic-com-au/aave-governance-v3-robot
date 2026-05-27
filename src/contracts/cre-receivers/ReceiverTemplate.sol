@@ -27,7 +27,6 @@ abstract contract ReceiverTemplate is IReceiver, Ownable {
   event ExpectedAuthorUpdated(address indexed previousAuthor, address indexed newAuthor);
   event ExpectedWorkflowNameUpdated(bytes10 indexed previousName, bytes10 indexed newName);
   event ExpectedWorkflowIdUpdated(bytes32 indexed previousId, bytes32 indexed newId);
-  event SecurityWarning(string message);
 
   constructor(address _forwarderAddress, address _initialOwner) {
     if (_forwarderAddress == address(0)) revert InvalidForwarderAddress();
@@ -56,7 +55,7 @@ abstract contract ReceiverTemplate is IReceiver, Ownable {
   }
 
   function onReport(bytes calldata metadata, bytes calldata report) external override {
-    if (s_forwarderAddress != address(0) && msg.sender != s_forwarderAddress) {
+    if (msg.sender != s_forwarderAddress) {
       revert InvalidSender(msg.sender, s_forwarderAddress);
     }
 
@@ -85,9 +84,8 @@ abstract contract ReceiverTemplate is IReceiver, Ownable {
   }
 
   function setForwarderAddress(address _forwarder) external onlyOwner {
+    if (_forwarder == address(0)) revert InvalidForwarderAddress();
     address previousForwarder = s_forwarderAddress;
-    if (_forwarder == address(0))
-      emit SecurityWarning('Forwarder address set to zero - contract is now INSECURE');
     s_forwarderAddress = _forwarder;
     emit ForwarderAddressUpdated(previousForwarder, _forwarder);
   }

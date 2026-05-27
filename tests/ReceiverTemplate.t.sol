@@ -24,7 +24,6 @@ contract ReceiverTemplateTest is Test {
   event ExpectedAuthorUpdated(address indexed previousAuthor, address indexed newAuthor);
   event ExpectedWorkflowIdUpdated(bytes32 indexed previousId, bytes32 indexed newId);
   event ExpectedWorkflowNameUpdated(bytes10 indexed previousName, bytes10 indexed newName);
-  event SecurityWarning(string message);
 
   function setUp() public {
     receiver = new MockReceiver(forwarder, owner);
@@ -137,12 +136,10 @@ contract ReceiverTemplateTest is Test {
     assertEq(receiver.getForwarderAddress(), newForwarder);
   }
 
-  function test_setForwarderAddress_ZeroEmitsSecurityWarning() public {
-    vm.expectEmit(false, false, false, true);
-    emit SecurityWarning('Forwarder address set to zero - contract is now INSECURE');
+  function test_setForwarderAddress_RevertsOnZero() public {
+    vm.expectRevert(ReceiverTemplate.InvalidForwarderAddress.selector);
     vm.prank(owner);
     receiver.setForwarderAddress(address(0));
-    assertEq(receiver.getForwarderAddress(), address(0));
   }
 
   function test_setExpectedAuthor_OnlyOwner() public {
