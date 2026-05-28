@@ -1,0 +1,24 @@
+{
+  "schedule": "0 0 12 */14 * *",
+  "chainName": "ethereum-mainnet-base-1",
+  "_rolesModifier": "0xBA25175FD3da510Ad9B1f550eA211A230Ca5F80d",
+  "_roleKey": "0x616176655f6465706f7369746f72000000000000000000000000000000000000",
+  "executor": "0x0000000000000000000000000000000000000000",
+  "steward": "0x4f1F3E32f20847a4c9F002882eB607aD750b6115",
+  "dataProviderV3": "0x0F43731EB8d45A581f4a36DD74F5f358bc90C73A",
+  "collector": "0xBA9424d650A4F5c80a0dA641254d1AcCE2A37057",
+  "priceOracle": "0x2Cc0Fc26eD4563A5ce5e8bdcfe1A2878676Ae156",
+  "corePoolV3": "0xA238Dd80C259a72e81d7e4664a9801593F98d1c5",
+  "depositMinUsd": "100000000000",
+  "migrationMinUsd": "500000000000",
+  "migrationBps": "9000",
+  "maxBps": "10000",
+  "ignoredTokens": [
+    "0x40d16fc0246ad3160ccc09b8d0d3a2cd28ae6c2f",
+    "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+    "0x63706e401c06ac8513145b7687A14804d17f814b",
+    "0xba5DdD1f9d7F570dc94a51479a000E3BCE967196",
+    "0x76FB31fb4af56892A25e32cFC43De717950c9278"
+  ],
+  "primeTokens": []
+}
