@@ -30,3 +30,12 @@ production-settings:
       url: https://mainnet.base.org
     - chain-name: ethereum-mainnet
       url: https://mainnet.gateway.tenderly.co
+
+# ==========================================================================
+polygon-production-settings:
+  account:
+      workflow-owner-address: "0xa7F927EA68f2F916Bf6362CC4B11726ccAD6339B"
+      workflow-name: "deployer"
+  rpcs:
+    - chain-name: polygon-mainnet
+      url: ${RPC_URL_POLYGON}
