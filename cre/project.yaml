@@ -30,3 +30,12 @@ production-settings:
       url: https://mainnet.base.org
     - chain-name: ethereum-mainnet
       url: https://mainnet.gateway.tenderly.co
+
+# ==========================================================================
+arbitrum-production-settings:
+  account:
+      workflow-owner-address: "0xa7F927EA68f2F916Bf6362CC4B11726ccAD6339B"
+      workflow-name: "deployer"
+  rpcs:
+    - chain-name: ethereum-mainnet-arbitrum-1
+      url: ${RPC_URL_ARBITRUM}

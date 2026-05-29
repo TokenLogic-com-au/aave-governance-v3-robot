@@ -32,3 +32,13 @@ production-settings:
     workflow-path: "./main.ts"
     config-path: "./config.production.json"
     secrets-path: ""
+
+# ==========================================================================
+
+arbitrum-production-settings:
+  user-workflow:
+    workflow-name: "automation-arbitrum"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.arbitrum.json"
+    secrets-path: ""
