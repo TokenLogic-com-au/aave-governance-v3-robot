@@ -19,6 +19,8 @@ staging-settings:
   rpcs:
     - chain-name: ethereum-mainnet-base-1
       url: https://mainnet.base.org
+    - chain-name: ethereum-mainnet
+      url: ${RPC_URL_ETHEREUM}
 
 # ==========================================================================
 production-settings:
@@ -30,3 +32,5 @@ production-settings:
       url: https://mainnet.base.org
     - chain-name: ethereum-mainnet
       url: https://mainnet.gateway.tenderly.co
+    - chain-name: plasma-mainnet
+      url: ${RPC_URL_PLASMA}
