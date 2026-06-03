@@ -32,3 +32,12 @@ production-settings:
     workflow-path: "./main.ts"
     config-path: "./config.production.json"
     secrets-path: ""
+
+# ==========================================================================
+avalanche-agents-production-settings:
+  user-workflow:
+    workflow-name: "automation-avalanche-agents"
+  workflow-artifacts:
+    workflow-path: "./main.ts"
+    config-path: "./config.avalanche-agents.json"
+    secrets-path: ""
