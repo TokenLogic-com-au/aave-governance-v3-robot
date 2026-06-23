@@ -23,7 +23,7 @@ staging-settings:
 # ==========================================================================
 production-settings:
   account:
-      workflow-owner-address: "0xa7F927EA68f2F916Bf6362CC4B11726ccAD6339B"
+      workflow-owner-address: "0x73494691C9B28b91A0b4C9dF213c1893fddA3a3B"
       workflow-name: "deployer"
   rpcs:
     - chain-name: ethereum-mainnet-base-1
@@ -34,7 +34,7 @@ production-settings:
 # ==========================================================================
 optimism-production-settings:
   account:
-      workflow-owner-address: "0xa7F927EA68f2F916Bf6362CC4B11726ccAD6339B"
+      workflow-owner-address: "0x73494691C9B28b91A0b4C9dF213c1893fddA3a3B"
       workflow-name: "deployer"
   rpcs:
     - chain-name: ethereum-mainnet-optimism-1
