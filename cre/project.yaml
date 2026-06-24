@@ -30,3 +30,12 @@ production-settings:
       url: https://mainnet.base.org
     - chain-name: ethereum-mainnet
       url: https://mainnet.gateway.tenderly.co
+
+# ==========================================================================
+ethereum-production-settings:
+  account:
+      workflow-owner-address: "0x73494691C9B28b91A0b4C9dF213c1893fddA3a3B"
+      workflow-name: "deployer"
+  rpcs:
+    - chain-name: ethereum-mainnet
+      url: ${RPC_URL_ETHEREUM}
